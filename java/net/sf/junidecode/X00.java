@@ -230,8 +230,8 @@ class X00 {
         "A", // 0xc1
         "A", // 0xc2
         "A", // 0xc3
-        "A", // 0xc4
-        "A", // 0xc5
+        "AE", // 0xc4
+        "AA", // 0xc5
         "AE", // 0xc6
         "C", // 0xc7
         "E", // 0xc8
@@ -248,13 +248,13 @@ class X00 {
         "O", // 0xd3
         "O", // 0xd4
         "O", // 0xd5
-        "O", // 0xd6
+        "OE", // 0xd6
         "x", // 0xd7
-        "O", // 0xd8
+        "OE", // 0xd8
         "U", // 0xd9
         "U", // 0xda
         "U", // 0xdb
-        "U", // 0xdc
+        "UE", // 0xdc
         "U", // 0xdd
         "Th", // 0xde
         "ss", // 0xdf
@@ -262,8 +262,8 @@ class X00 {
         "a", // 0xe1
         "a", // 0xe2
         "a", // 0xe3
-        "a", // 0xe4
-        "a", // 0xe5
+        "ae", // 0xe4
+        "aa", // 0xe5
         "ae", // 0xe6
         "c", // 0xe7
         "e", // 0xe8
@@ -280,13 +280,13 @@ class X00 {
         "o", // 0xf3
         "o", // 0xf4
         "o", // 0xf5
-        "o", // 0xf6
+        "oe", // 0xf6
         "/", // 0xf7
-        "o", // 0xf8
+        "oe", // 0xf8
         "u", // 0xf9
         "u", // 0xfa
         "u", // 0xfb
-        "u", // 0xfc
+        "ue", // 0xfc
         "y", // 0xfd
         "th", // 0xfe
         "y" // 0xff

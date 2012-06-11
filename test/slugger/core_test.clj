@@ -4,10 +4,14 @@
 
 
 (deftest slug-tests
-  (is (= (->slug "learn how to say 你好")  "learn-how-to-say-ni-hao")))
+  (is (= (->slug "learn how to say 你好")  "learn-how-to-say-ni-hao"))
+  (is (= (->slug " this string   should be simple enough")  "this-string-should-be-simple-enough"))
+  (is (= (->slug "Vi vil have mere &Oslash;l")  "vi-vil-have-mere-oel"))
+  )
 
 (deftest unidecode-test
-  (is (= (unidecode "Brændgaard") "Braendgaard"))
+  ;; I Changed the unidecode rules for scandivian and german letters to follow conventions
+  (is (= (unidecode "Brændgård vil have øl i grünefeldt") "Braendgaard vil have oel i gruenefeldt"))
 
   ;; The following tests were converted from Java from Junidecoder
   (is (= (unidecode "\u00C6neid") "AEneid"))
@@ -83,3 +87,14 @@
                     "Si hagarasuwoShi beraremasu. sorehaSi woShang tukemasen. "}]
       (doseq [s convert]
         (is (= (unidecode (key s)) (val s))))))
+
+(deftest convert-accented-html-entities-test
+  (let [ examples { "&aring;"  "aa"
+                    "&egrave;" "e"
+                    "&icirc;"  "i"
+                    "&Oslash;" "oe"
+                    "&uuml;"   "ue"
+                    "&Ntilde;" "n"
+                    "&ccedil;" "c" }]
+    (doseq [ s examples]
+      (is (= (convert-accented-entities (key s)) (val s))))))
