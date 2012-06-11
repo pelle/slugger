@@ -1,4 +1,5 @@
 (ns slugger.core
+  (:refer-clojure :exclude [replace])
   (:use [clojure.string :only [replace lower-case trim]])
   (:import [net.sf.junidecode Junidecode]))
   
@@ -7,7 +8,7 @@
   [text]
   (net.sf.junidecode.Junidecode/unidecode text))
 
-(defn slug
+(defn ->slug
   [text]
   (-> (unidecode text)
       (trim)

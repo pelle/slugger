@@ -4,7 +4,7 @@
 
 
 (deftest slug-tests
-  (is (= (slug "learn how to say 你好")  "learn-how-to-say-ni-hao")))
+  (is (= (->slug "learn how to say 你好")  "learn-how-to-say-ni-hao")))
 
 (deftest unidecode-test
   (is (= (unidecode "Brændgaard") "Braendgaard"))

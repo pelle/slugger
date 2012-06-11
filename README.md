@@ -19,7 +19,7 @@ Then you can use it:
 ```clojure
 (use 'slugger.core)
 
-(slug "learn how to say 你好") 
+(->slug "learn how to say 你好") 
 => "learn-how-to-say-ni-hao"
 ```
 
