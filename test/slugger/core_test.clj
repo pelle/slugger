@@ -7,6 +7,9 @@
   (is (= (->slug "learn how to say 你好")  "learn-how-to-say-ni-hao"))
   (is (= (->slug " this string   should be simple enough")  "this-string-should-be-simple-enough"))
   (is (= (->slug "Vi vil have mere &Oslash;l")  "vi-vil-have-mere-oel"))
+  (is (= (->slug "Vi vil have mere øl")  "vi-vil-have-mere-oel"))
+  (is (= (->slug "An idea worth $100")  "an-idea-worth-100-dollars"))
+  (is (= (->slug "my email address is pelle@picomoney.com")  "my-email-address-is-pelle-at-picomoney-dot-com"))
   )
 
 (deftest unidecode-test
@@ -110,13 +113,14 @@
     (doseq [ s examples]
       (is (= (convert-misc-entities (key s)) (val s))))))
 
-; (deftest convert-misc-chars-test
-;   (let [ examples { "Foo & bar make foobar" "Foo and bar make foobar"
-;                     "Breakdown #9"  "Breakdown number 9"
-;                     "foo@bar.com" "foo at bar dot com"
-;                     "100% of yr love"  "100 percent of yr love"
-;                     "Kisses are $3.25 each" "Kisses are 3 dollars 25 cents each"
-;                     "That CD is £3.25 plus tax" "That CD is 3 pounds 25 pence plus tax"
-;                     "This CD is ¥1000 instead" "This CD is 1000 yen instead"} ]
-;     (doseq [ s examples]
-;       (is (= (convert-misc-chars (key s)) (val s))))))
+(deftest convert-misc-characters-test
+  (let [ examples { "Foo & bar make foobar" "Foo and bar make foobar"
+                    "Breakdown #9"  "Breakdown number 9"
+                    "foo@bar.com" "foo at bar dot com"
+                    "100% of yr love"  "100 percent of yr love"
+                    "Kisses are $3.25 each" "Kisses are 3 dollars 25 cents each"
+                    "Kisses are €3.25 each" "Kisses are 3 euros 25 cents each"
+                    "That CD is £3.25 plus tax" "That CD is 3 pounds 25 pence plus tax"
+                    "This CD is ¥1000 instead" "This CD is 1000 yen instead"} ]
+    (doseq [ s examples]
+      (is (= (convert-misc-characters (key s)) (val s))))))
