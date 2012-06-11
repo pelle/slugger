@@ -1,4 +1,4 @@
-(defproject slugger "0.1.0"
+(defproject slugger "1.0.0"
   :description "Create good slugs from unicode data"
   :java-source-paths ["java"]
   :license {:name "Eclipse Public License"
