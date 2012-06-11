@@ -98,3 +98,25 @@
                     "&ccedil;" "c" }]
     (doseq [ s examples]
       (is (= (convert-accented-entities (key s)) (val s))))))
+
+(deftest convert-misc-html-entities-test
+  (let [ examples { "America&#8482;" "America(tm)"
+                    "Tea &amp; Sympathy" "Tea and Sympathy"
+                    "To be continued&#8230;" "To be continued..."
+                    "Foo&nbsp;Bar" "Foo Bar"
+                    "100&#163;" "100 pound"
+                    "&frac12; a dollar" "half a dollar"
+                    "35&deg;" "35 degrees" }]
+    (doseq [ s examples]
+      (is (= (convert-misc-entities (key s)) (val s))))))
+
+; (deftest convert-misc-chars-test
+;   (let [ examples { "Foo & bar make foobar" "Foo and bar make foobar"
+;                     "Breakdown #9"  "Breakdown number 9"
+;                     "foo@bar.com" "foo at bar dot com"
+;                     "100% of yr love"  "100 percent of yr love"
+;                     "Kisses are $3.25 each" "Kisses are 3 dollars 25 cents each"
+;                     "That CD is £3.25 plus tax" "That CD is 3 pounds 25 pence plus tax"
+;                     "This CD is ¥1000 instead" "This CD is 1000 yen instead"} ]
+;     (doseq [ s examples]
+;       (is (= (convert-misc-chars (key s)) (val s))))))
