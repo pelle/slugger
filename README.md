@@ -54,6 +54,7 @@ Note I have made a few minor changes to it for transliterating Scandinavian lett
 You can also use it directly:
 
 ```clojure
+(use '[slugger.core :only [unidecode]])
 (unidecode "私はガラスを食べられます。それは私を傷つけません。")
 =>"Si hagarasuwoShi beraremasu. sorehaSi woShang tukemasen. "
 ```
