@@ -11,7 +11,7 @@ https://github.com/rsl/stringex
 Add the following to your project.clj
 
 ```clojure
-[slugger "1.0.0"]
+[slugger "1.0.1"]
 ```
 
 Then you can use it:
