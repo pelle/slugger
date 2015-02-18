@@ -4,7 +4,7 @@
 
 (deftest unidecode-test
   ;; I Changed the unidecode rules for scandivian and german letters to follow conventions
-  (is (= (unidecode "Brændgård vil have øl i grünefeldt") "Braendgaard vil have oel i gruenefeldt"))
+  (is (= (unidecode "Brændgård vil have øl i grünefeldt") "Braendgard vil have ol i grunefeldt"))
 
   ;; The following tests were converted from Java from Junidecoder
   (is (= (unidecode "\u00C6neid") "AEneid"))
